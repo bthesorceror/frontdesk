@@ -1,0 +1,22 @@
+{
+  "name": "frontdesk",
+  "version": "0.0.1",
+  "description": "track checkins and checkouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test"
+  },
+  "keywords": [
+    "checkin",
+    "checkout"
+  ],
+  "author": "Brandon Farmer",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^2.12.3",
+    "tap": "^0.4.8"
+  },
+  "dependencies": {
+    "underscore": "^1.6.0"
+  }
+}
