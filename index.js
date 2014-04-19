@@ -1,10 +1,14 @@
 var _ = require('underscore');
 
-function FrontDesk() {
+function FrontDesk(max) {
+  this.max = max;
   this.ledger = {};
 }
 
 FrontDesk.prototype.checkin = function(key) {
+  if (this.max && this.ledger[key] >= this.max)
+    return false;
+
   if (_.isNumber(this.ledger[key])) {
     this.ledger[key] += 1;
   } else {
