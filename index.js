@@ -27,4 +27,8 @@ FrontDesk.prototype.isOccupied = function(key) {
   return this.ledger[key] > 0;
 }
 
+FrontDesk.prototype.evacuate = function() {
+  this.ledger = {};
+}
+
 module.exports = FrontDesk;

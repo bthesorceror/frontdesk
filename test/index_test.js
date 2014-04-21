@@ -9,6 +9,20 @@ test('can create a new frontdesk', function(t) {
   t.ok(frontdesk);
 });
 
+test('can evacuate all rooms', function(t) {
+  t.plan(4);
+
+  var frontdesk = new FrontDesk();
+
+  t.ok(frontdesk.checkin('key1'));
+  t.ok(frontdesk.checkin('key2'));
+
+  frontdesk.evacuate();
+
+  t.notOk(frontdesk.isOccupied('key1'));
+  t.notOk(frontdesk.isOccupied('key2'));
+});
+
 test('can checkin a room', function(t) {
   t.plan(2);
 
