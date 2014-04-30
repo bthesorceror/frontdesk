@@ -1,4 +1,6 @@
-var _ = require('underscore');
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
 function FrontDesk(max) {
   this.max = max;
@@ -9,7 +11,7 @@ FrontDesk.prototype.checkin = function(key) {
   if (this.max && this.ledger[key] >= this.max)
     return false;
 
-  if (_.isNumber(this.ledger[key])) {
+  if (isNumber(this.ledger[key])) {
     this.ledger[key] += 1;
   } else {
     this.ledger[key] = 1;
